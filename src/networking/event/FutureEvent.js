@@ -7,9 +7,9 @@ function FutureEvent(type,value){
     this._value = value;
 
     // 连接失败事件
-    FutureEvent.FAILED = "FutureFailed";
+    FutureEvent.FAILED = 'FutureFailed';
     // 正常连接
-    FutureEvent.CONNECT = "FutureConnect";
+    FutureEvent.CONNECT = 'FutureConnect';
 };
 
 module.exports = FutureEvent;

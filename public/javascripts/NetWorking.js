@@ -8,8 +8,8 @@ var cleint = new Client();
 
 cleint.connect();
 
-cleint.on(FutrueEvent.FAILED, function(event){
-    throw new Error(event.value);
+cleint.on('FutureFailed', function(event){
+    throw new Error(event._value);
 })
 
 //if (cleint.session.connected){

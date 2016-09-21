@@ -43,7 +43,7 @@ NetClient.prototype.handlerClientError = function (error) {
     //console.log("Connection Error: " + error.toString());
     //throw new Error(" CONNECT EORROR: " + error.toString());
     var event = new FutrueEvent(FutrueEvent.FAILED, error);
-    this.emit(FutrueEvent.FAILED, event);
+    this.emit('FutureFailed'.toString(), event);
 };
 
 NetClient.prototype.handlerClientConnect = function (connect) {
