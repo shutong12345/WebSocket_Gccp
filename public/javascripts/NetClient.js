@@ -13,7 +13,7 @@ var FutrueEvent = require('../../src/networking/event/FutureEvent');
  * @param {Object} config 连接参数
  * */
 function NetClient(config) {
-    EventEmitter.call(this)
+    EventEmitter.call(this);
     this.self = null;
     this.session = null;
     this.config = {
@@ -28,6 +28,9 @@ NetClient.prototype.connect = function (config) {
     this.self = this;
     this.client = new WebSocketClient();
     this.self._addClientEventListeners();
+    //this.client.on('connectFailed', function(err){
+    //    //退出
+    //});
     this.client.connect('ws://localhost:5566/', 'websocket');
 };
 
@@ -37,7 +40,8 @@ NetClient.prototype._addClientEventListeners = function(){
 };
 
 NetClient.prototype.handlerClientError = function (error) {
-    console.log("Connection Error: " + error.toString());
+    //console.log("Connection Error: " + error.toString());
+    //throw new Error(" CONNECT EORROR: " + error.toString());
     var event = new FutrueEvent(FutrueEvent.FAILED, error);
     this.emit(FutrueEvent.FAILED, event);
 };
