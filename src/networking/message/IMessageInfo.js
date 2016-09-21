@@ -6,12 +6,11 @@ var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 
 
-function IMessageInfo()
+function IMessageInfo(event)
 {
     EventEmitter.call(this);
 
-    self.emit("Ready", );
-
+    self.emit("Ready", event);
 }
 
 util.inherits(IMessageInfo, EventEmitter);
